@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello HomePage!{% endblock %}
+
+
+{% block body %}
+    <h1>Formulaire d'inscription</h1>
+    <a href="{{ path("app_home") }}">retour</a>
+    <form action="{{ path("app_register") }}" method="post">
+        <label for="username">username</label>
+        <input type="text" name="username" placeholder="pseudo" id="username">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" placeholder="mot de passe">
+        <input type="submit" value="envoyer">
+    </form>
+    <p>{{ message }}</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello HomePage!{% endblock %}
+
+
+{% block body %}
+    <h1>Formulaire de connexion</h1>
+    <a href="{{ path("app_home") }}">retour</a>
+    <form action="{{ path('app_login') }}" method="post">
+        <label for="username">Pseudo</label>
+        <input type="text" id="username" name="_username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password">
+        <button type="submit">login</button>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+    </form>
+{% endblock %}
